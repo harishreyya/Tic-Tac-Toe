@@ -1,5 +1,6 @@
 let count = 0;
-      function show(number){
+
+ function show(number){
   if(count == 0){
    let div = document.getElementById("boxes-"+ number);
    if(div.innerText==""){
@@ -7,13 +8,8 @@ let count = 0;
     count = 1;
     gameWon();
    }else{
-    let warning = document.getElementById("show-warning");
-    warning.innerHTML = "&#9888; already-filled!"
-    setTimeout(()=>{
-        warning.innerText = ""
-    },1800)
+    clear()
    }
-
 }else{
    let div = document.getElementById("boxes-"+ number);
    if(div.innerText==""){
@@ -22,14 +18,18 @@ let count = 0;
     count = 0;
     gameWon();
    }else{
+    clear()
+   }
+  }
+
+}
+
+function clear(){
     let warning = document.getElementById("show-warning");
     warning.innerHTML = "&#9888; already-filled!"
     setTimeout(()=>{
         warning.innerText = ""
     },1800)
-   }
-  }
-
 }
 
 function reset(){
